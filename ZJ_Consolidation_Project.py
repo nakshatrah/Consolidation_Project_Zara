@@ -1,10 +1,14 @@
 import random
 
 #Create roll dice
+#[peer edit (nakshatra)]: maybe you could change the function below to use a tuple, I'll comment out the changes I'd make to each line right below it. 
 def roll_dice():
     """Roll three dice and return the result as a list."""
+    #"""Roll three dice and return the result as a tuple."""
     dice_list = [random.randint(1, 6) for _ in range(3)]
+    # dice = tuple(random.randint(1, 6) for _ in range(3))
     return dice_list
+    # return dice
 # tests
 # random.seed(42)
 # roll_dice() # gets 6, 1, 1
