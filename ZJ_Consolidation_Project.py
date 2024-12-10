@@ -111,16 +111,20 @@ def play_game(target_score, players, scores, current_player_index):
     """Play the game until a player reaches the target score."""
     num_players = len(players)    
     while True:
+        #[peer edit (nakshatra)]: suggestion, you could make this more readable by using f-strings. I'll comment out what I'd use as a replacement under the line you wrote as a suggestion for how you could change it. 
         if current_player_index >= num_players or current_player_index < 0:
             print("Error: current_player_index is out of range.")
             current_player_index = 0  # Reset to first player instead of breaking
         player = players[current_player_index]
         print({player} , "'s turn:")
+        # print(f"{player}'s turn:")
         turn_score = play_turn(player)
         scores[player] += turn_score
         print({player} , "'s total score:" , {scores[player]})
+        # print(f"{player}'s total score: {scores[player]}")
         if scores[player] >= target_score:
             print({player} , "wins the game with a total score of" , {scores[player]} , "!")
+            # print(f"{player} wins the game with a total score of {scores[player]}!")
             break
         current_player_index = (current_player_index + 1) % num_players
 # target_score = 20
